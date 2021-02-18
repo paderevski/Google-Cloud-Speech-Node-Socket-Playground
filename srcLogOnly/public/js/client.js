@@ -77,7 +77,7 @@ var recordingStatus = document.getElementById('recordingStatus');
 function startRecording() {
   startButton.disabled = true;
   endButton.disabled = false;
-  recordingStatus.style.visibility = 'visible';
+  //recordingStatus.style.visibility = 'visible';
   initRecording();
 }
 
@@ -85,7 +85,7 @@ function stopRecording() {
   // waited for FinalWord
   startButton.disabled = false;
   endButton.disabled = true;
-  recordingStatus.style.visibility = 'hidden';
+  //recordingStatus.style.visibility = 'hidden';
   streamStreaming = false;
   socket.emit('endGoogleCloudStream', '');
 

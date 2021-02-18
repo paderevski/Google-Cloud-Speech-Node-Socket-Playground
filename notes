@@ -1,0 +1,7 @@
+This doesn't seem to work. I have verified that my gcloud account / auth is good by
+using command-line calls to the STT api, and it works fine. I've also verified the program
+is making a valid gcloud connection. But no data seems to be coming back.
+
+2/18/21
+pw
+

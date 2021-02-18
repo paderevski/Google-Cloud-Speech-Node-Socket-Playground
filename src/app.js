@@ -40,6 +40,7 @@ io.on('connection', function (client) {
 
   client.on('join', function () {
     client.emit('messages', 'Socket Connected to Server');
+    console.log(speechClient);
   });
 
   client.on('messages', function (data) {
@@ -47,6 +48,7 @@ io.on('connection', function (client) {
   });
 
   client.on('startGoogleCloudStream', function (data) {
+    console.log("start google event received")
     startRecognitionStream(this, data);
   });
 
@@ -56,12 +58,14 @@ io.on('connection', function (client) {
 
   client.on('binaryData', function (data) {
     // console.log(data); //log binary data
+    // console.log("binary data received")
     if (recognizeStream !== null) {
       recognizeStream.write(data);
     }
   });
 
   function startRecognitionStream(client) {
+    console.log("start recognition stream")
     recognizeStream = speechClient
       .streamingRecognize(request)
       .on('error', console.error)
